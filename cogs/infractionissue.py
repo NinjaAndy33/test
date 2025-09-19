@@ -18,10 +18,10 @@ class InfractionIssue(commands.Cog):
         expires="Expiration time in days (optional)"
     )
     @app_commands.choices(type=[
-        app_commands.Choice(name="Notice", value="Notice"),
-        app_commands.Choice(name="Warning", value="Warning"),
-        app_commands.Choice(name="Strike", value="Strike"),
-        app_commands.Choice(name="Suspension", value="Suspension"),
+        app_commands.Choice(name="Notice", value="Notice")
+        app_commands.Choice(name="Warning", value="Warning")
+        app_commands.Choice(name="Strike", value="Strike")
+        app_commands.Choice(name="Suspension", value="Suspension")
         app_commands.Choice(name="Termination", value="Termination")
     ])
     async def infraction_issue(self, interaction: discord.Interaction, target: discord.User, reason: str, type: app_commands.Choice[str], expires: int = None):
@@ -79,7 +79,7 @@ class InfractionIssue(commands.Cog):
 
         # ✅ Confirm
         await interaction.response.send_message(
-            content=f"<:whitecheck:1407773605642764389> <@{target.id}> has successfully been infracted!",
+            content=f"<@{target.id}> has successfully been infracted!",
             ephemeral=True
         )
 
